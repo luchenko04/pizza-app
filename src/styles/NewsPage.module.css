@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #ffbc85, #f1e1d1);
+    width: 100%;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.newsList {
+    width: 100%;
+    max-width: 800px;
+}
+
+.newsCard {
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.newsTitle {
+    font-size: 24px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #ffbc85;
+    color: black;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.newsTitle:hover {
+    color: #d35400;
+}
+
+.newsContent {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition:
+        max-height 0.4s ease-in-out,
+        padding 0.4s ease-in-out;
+}
+
+.newsContent.open {
+    max-height: 400px; /* Увеличим высоту, если текст длиннее */
+    padding: 15px; /* Добавим отступы со всех сторон при раскрытии */
+}
+
+.newsContent p {
+    font-size: 16px;
+    color: #666; /* Цвет немного светлее заголовка */
+    margin: 10px 0;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.newsContent p:first-of-type {
+    margin-top: 0; /* Убираем лишний отступ в начале текста */
+}
+
+.newsContent p:hover {
+    color: #333;
+}
+
+.newsImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 200px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px; /* Добавим расстояние между изображением и текстом */
+}
+
+.newsCard:hover {
+    transform: translateY(-2px);
+}
